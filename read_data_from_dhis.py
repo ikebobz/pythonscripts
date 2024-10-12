@@ -77,6 +77,11 @@ def getcatcomboid(cat1,cat2):
 def getdataelementid(name):
     getdelem = 'HFR1_{}'.format(name)
     return deframe.loc[getdelem,'ID']
+def getqueries():
+    with open('queries.txt','r') as src:
+        queries = src.read().split(";\n")
+        for query in queries:
+            print(query.split(":-")[0])
     
     
             
@@ -100,7 +105,8 @@ def main():
     print(session_cookies['JSESSIONID'])
     print(r)'''
     #pulldatafromdb()
-    interactWithDhis()
+    #interactWithDhis()
+    getqueries()
 
 if __name__ == '__main__':
     main()
