@@ -15,7 +15,7 @@ radet = pd.read_excel("radet.xlsx",sheet_name = "radet")
 ndrll = pd.read_excel("list.xlsx",sheet_name = "list")
 
 def main():
-    switch = 0
+    switch = 1
     if switch == 1:
         getVariance()
         return

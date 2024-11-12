@@ -81,7 +81,7 @@ def getqueries():
     with open('queries.txt','r') as src:
         queries = src.read().split(";\n")
         for query in queries:
-            print(query.split(":-")[0])
+            print(query)
     
     
             
