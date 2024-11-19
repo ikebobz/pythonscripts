@@ -10,7 +10,7 @@ import os
 import re
 
 def main():
-    DIR = r'C:\Users\HI LEAD\Downloads\installers\lplus_updates_10_07\lp_v205_2\runtime\ndr\transfer\temp\1407'
+    DIR = r'C:\Users\HI LEAD\Documents\XMLs\12200_NIulfQauxlQ_IrruaSpecialistHospital_treatment_19112024'
 
     path = os.path.join(DIR, "*")
     files = glob.glob(path)
@@ -42,7 +42,7 @@ def findTXCurData(text,flag=1):
             found = m[-1]
             return found
     else:
-        m = re.findall('<HospitalNumber>(.+?)</HospitalNumber>',text)
+        m = re.findall('<PatientIdentifier>NIulfQauxlQ_(.+?)</PatientIdentifier>',text)
         if m:
             found = m[-1]
             return found
