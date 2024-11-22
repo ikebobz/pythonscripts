@@ -13,45 +13,44 @@ import json
 import datetime as dt
 import numpy as np
 import os
-from jproperties import Properties
 
 
 ccframe = pd.read_excel("category_combinations.xlsx",sheet_name="catcom")
 ccframe.set_index('catcombo',inplace=True)
 deframe = pd.read_excel("data_elements_new.xlsx",sheet_name="data_elements_new")
 deframe.set_index('Name',inplace=True)
-
-#initialize endpoints
-configs = Properties()
-config_file = open('config.properties','rb')
-configs.load(config_file)
-baseurl = configs.get("baseurl").data
-dhis_pass = os.environ[configs.get("dhis_pass").data]
-getUrl = '{}{}'.format(baseurl,'dataSets')
-postUrl = '{}{}'.format(baseurl,'dataValueSets')
-
-#initialize dhis post parameters
-#week = '2024SunW{}'.format(dt.date.today().isocalendar().week)
-period = configs.get("period").data
-orgUnitId = configs.get("orgUnitId").data
-dataset =configs.get("dataset").data
-
-#initialize database connection parameters
-connectstring = configs.get("connectstring").data
+baseurl = 'http://192.168.8.104:8086/dhis2/api/'
+URL = 'http://192.168.8.104:8086/dhis2/api/41/auth/login'
+getvals = 'http://192.168.8.104:8086/dhis2/api/dataValueSets?dataSet=Qshvdw0brBq&period=2024W39&orgUnit=UzCw35LZV95'
+postval = 'http://192.168.8.104:8086/dhis2/api/dataValues?de=Vjet5qO2d5N&pe=2024SunW40&ou=UzCw35LZV95&co=ShtKZwEQsyh&value=10'
+getDset = '{}{}'.format(baseurl,'dataSets')
+posttoDataSet = '{}{}'.format(baseurl,'dataValueSets')
+orgUnitId = 'NpZ66HtziLp'
+period = '2024SunW47'
+dhis_pass = os.environ['DHIS_PASSWORD']
 
 
-#print(dhis_pass)
-
-
-
+def interactWithDhis():
+    r = requests.get(getDset,auth=('ionyenuforo','Password@2023'))
+    print(r)
+    datasetid = ''
+    datasets = (r.json()['dataSets'])
+    for obj in datasets:
+        if obj['displayName'] == 'NEW_APPR_HFR':
+            datasetid = obj['id']
+            break
+    print(dhis_pass)
+    """url_datasetinfo = '{}{}{}'.format(baseurl,'dataSets/',datasetid)
+    response_datasetinfo = requests.get(url_datasetinfo,auth=('ionyenuforo','Password@2023'))
+    print(response_datasetinfo.json())"""
 def pulldatafromdb():
     data = []
     values = {}
     header ={'Content-Type':'application/json'}
-    values["dataSet"] = dataset
+    values["dataSet"] = "Qshvdw0brBq"
     values["period"] = period
     values["orgUnit"] = orgUnitId
-    with psycopg.connect(connectstring) as con:
+    with psycopg.connect('dbname=lp_chb user=postgres password=lamis') as con:
         queries = getqueries()
         for query in queries:
             deuid = query.split(":-")[0]
@@ -72,7 +71,7 @@ def pulldatafromdb():
     values['dataValues'] = data
     json_string = json.dumps(values)
     #print(json_string)
-    res = requests.post(postUrl,auth=('ionyenuforo',dhis_pass),data=json_string,headers=header)
+    res = requests.post(posttoDataSet,auth=('ionyenuforo',dhis_pass),data=json_string,headers=header)
     print('{}-{}'.format(res,res.text))      
         #print('The uuid for this dataelement is {}'.format(deuid))
 def getcatcomboid(cat1,cat2):
@@ -95,8 +94,26 @@ def getqueries():
             
 
 def main():
-    pulldatafromdb()
+    '''# Start a session so we can have persistant cookies
+    session = requests.session()
 
+    # This is the form data that the page sends when logging in
+    login_data = {
+        'username': EMAIL,
+        'password': PASSWORD
+    }
+    headers = {'u':'ionyenuforo:Password@2023'}
+    # Authenticate
+    r = session.post(URL, data=login_data)
+
+    # Try accessing a page that requires you to be logged in
+    r = session.get(uploadval)
+    session_cookies = session.cookies.get_dict()
+    print(session_cookies['JSESSIONID'])
+    print(r)'''
+    pulldatafromdb()
+    #interactWithDhis()
+    #getqueries()
 
 if __name__ == '__main__':
     main()

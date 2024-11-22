@@ -9,7 +9,12 @@ Created on Sat Oct 26 08:03:19 2024
     content = f.read()
     print(content)'''
 import zlib,sys,gzip
-f = open('lite.ab','rb')
+import datetime as dt
+'''f = open('lite.ab','rb')
 decompressedn = zlib.decompress(f.read(),wbits = -zlib.MAX_WBITS)
 #decompressedn = gzip.open('lamispluslite.adb','rb').read()
-print(decompressedn)
+print(decompressedn)'''
+now = dt.date.today().isocalendar().week
+print(now)
+
+
