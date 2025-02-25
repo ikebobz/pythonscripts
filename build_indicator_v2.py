@@ -15,7 +15,7 @@ import math
 
 data_element = pd.read_excel("format_to_import_indicator_codelist_from_datafi.xlsx",sheet_name = "indicator")
 #catcombo = pd.read_excel("data_elements.xlsx",sheet_name = "category_combo")
-insertsql = "insert into indicator(indicatorid,uid,created, lastupdated, lastupdatedby, name,shortname,description,annualized,indicatortypeid,numerator,numeratordescription,denominator,userid,sharing)VALUES({},{},current_date,current_date,216157,{},{},{},false,4675,{},{},1,216157,{});\n\n"
+insertsql = "insert into indicator(indicatorid,uid,created, lastupdated, lastupdatedby, name,shortname,description,annualized,indicatortypeid,numerator,numeratordescription,denominator,denominatordescription,userid,sharing)VALUES({},{},current_date,current_date,216157,{},{},{},false,4675,{},{},1,{},216157,{});\n\n"
 out = open('import.sql','w+')
 
 short1 = 'SWO'
@@ -38,7 +38,7 @@ def start():
             formula = "'#{{{}.{}}}'".format(datauid,catcombouid)
         counter = counter + 1
         shortctr = shortctr + 1
-        sql = insertsql.format(counter,"'{}'".format(getuid()),"'{}'".format(indicator),shortname,"'{}'".format(desc),formula,"'{}'".format(indicator),"'{}'".format(share_settings))
+        sql = insertsql.format(counter,"'{}'".format(getuid()),"'{}'".format(indicator),shortname,"'{}'".format(desc),formula,"'{}'".format(indicator),"'{}'".format(indicator),"'{}'".format(share_settings))
         out.write('{}'.format(sql))
         
         """for index,r in catcombo.iterrows():
