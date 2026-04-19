@@ -66,7 +66,7 @@ def getVariance():
             
     print("The number of affacted clients is :",count)
     targetframe = pd.DataFrame(target,columns=['person_uuid'])
-    targetframe.to_excel("variants.xlsx",sheet_name='identifiers',index=False)
+    targetframe.to_excel("variants_1.xlsx",sheet_name='identifiers',index=False)
 
         
 

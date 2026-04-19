@@ -10,7 +10,7 @@ import os
 import re
 
 def main():
-    DIR = r'C:\Users\HI LEAD\Documents\XMLs\25057_wh1fufa69db_OlojowonPrimaryHealthCentre_treatment_14112024'
+    DIR = r'C:\Users\Admin\Downloads\xmls\25null_SEyGljwDspr_AjeromiGeneralHospital_treatment_04092025'
 
     path = os.path.join(DIR, "*")
     files = glob.glob(path)

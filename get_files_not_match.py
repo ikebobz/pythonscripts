@@ -10,12 +10,12 @@ import os
 import re
 
 def main():
-    DIR = r'C:\Users\HI LEAD\Documents\XMLs\12200_NIulfQauxlQ_IrruaSpecialistHospital_treatment_19112024'
+    DIR = r'C:\Users\Admin\Downloads\xml\treatmentxml_ajeromi'
 
     path = os.path.join(DIR, "*")
     files = glob.glob(path)
     hits = 0
-    with open('data.csv','a+') as file:
+    with open('ajeromi.csv','a+') as file:
       for f in files:
          fh = open(f,'r')
          fc = fh.read()
@@ -32,17 +32,17 @@ def main():
     print('Number of hits is:',hits)'''
 def findTXCurData(text,flag=1):
     if flag == 1:
-        m = re.findall('<PrescribedRegimenDuration>(\d{2,3}?)</PrescribedRegimenDuration>',text)
+        m = re.findall(r'<PrescribedRegimenDuration>(\d{2,3}?)</PrescribedRegimenDuration>',text)
         if m:
             found = m[-1]
             return found
     elif flag == 2:
-        m = re.findall('<PrescribedRegimenDispensedDate>(.+?)</PrescribedRegimenDispensedDate>',text)
+        m = re.findall(r'<PrescribedRegimenDispensedDate>(.+?)</PrescribedRegimenDispensedDate>',text)
         if m:
             found = m[-1]
             return found
     else:
-        m = re.findall('<PatientIdentifier>NIulfQauxlQ_(.+?)</PatientIdentifier>',text)
+        m = re.findall(r'<PatientIdentifier>SEyGljwDspr_(.+?)</PatientIdentifier>',text)
         if m:
             found = m[-1]
             return found
