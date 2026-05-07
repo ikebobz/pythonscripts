@@ -10,12 +10,12 @@ import os
 import re
 
 def main():
-    DIR = r'C:\Users\Admin\Downloads\xml\treatmentxml_ajeromi'
+    DIR = r'C:\Users\Admin\Downloads\projects\python\pythonscripts\ndr_tools\generated_xmls\not-seen'
 
     path = os.path.join(DIR, "*")
     files = glob.glob(path)
     hits = 0
-    with open('ajeromi.csv','a+') as file:
+    with open('datum.csv','a+') as file:
       for f in files:
          fh = open(f,'r')
          fc = fh.read()
@@ -42,7 +42,7 @@ def findTXCurData(text,flag=1):
             found = m[-1]
             return found
     else:
-        m = re.findall(r'<PatientIdentifier>SEyGljwDspr_(.+?)</PatientIdentifier>',text)
+        m = re.findall(r'<PatientIdentifier>.*_(.+?)</PatientIdentifier>',text)
         if m:
             found = m[-1]
             return found
