@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>882</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Iga Idugaran Primary Health Centre</FacilityName>
+            <FacilityID>Nid1f3KACfp</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>Nid1f3KACfp_215ec6ff-57bf-4c3e-8b2f-5036310a1cc9</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Iga Idugaran Primary Health Centre</FacilityName>
+                <FacilityID>Nid1f3KACfp</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>1991-05-26</PatientDateOfBirth>
+            <PatientSexCode>F</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>70d220fc-81f1-46f1-822f-dcaef2e53c93</VisitID>
+                <VisitDate>2026-05-11</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1a</Code>
+                    <CodeDescTxt>TDF-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>180</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-05-11</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2019-06-14</DateRegimenStarted>
+                <MultiMonthDispensing>MMD2</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

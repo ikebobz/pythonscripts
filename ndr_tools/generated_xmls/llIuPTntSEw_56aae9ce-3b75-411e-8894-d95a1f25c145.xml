@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>819</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>St. Milla Hospital</FacilityName>
+            <FacilityID>llIuPTntSEw</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>llIuPTntSEw_56aae9ce-3b75-411e-8894-d95a1f25c145</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>St. Milla Hospital</FacilityName>
+                <FacilityID>llIuPTntSEw</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>2020-10-27</PatientDateOfBirth>
+            <PatientSexCode>M</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>1dd309a6-c471-4412-986f-a7a1b01dc621</VisitID>
+                <VisitDate>2026-04-17</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1c</Code>
+                    <CodeDescTxt>ABC-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>90</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-04-17</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2024-01-29</DateRegimenStarted>
+                <MultiMonthDispensing>MMD3</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>833</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Gbagada General Hospital</FacilityName>
+            <FacilityID>rp69pX7NNl2</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>rp69pX7NNl2_acf993cb-3d10-48ea-a2bd-450c2d996d35</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Gbagada General Hospital</FacilityName>
+                <FacilityID>rp69pX7NNl2</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>1998-05-12</PatientDateOfBirth>
+            <PatientSexCode>F</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>aa79157f-2345-48c6-b794-06b114a14a9f</VisitID>
+                <VisitDate>2026-04-15</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1a</Code>
+                    <CodeDescTxt>TDF-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>180</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-04-15</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2025-04-16</DateRegimenStarted>
+                <MultiMonthDispensing>MMD2</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>859</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Ketu Primary Health Centre</FacilityName>
+            <FacilityID>DpZOtdkfW60</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>DpZOtdkfW60_ced000c2-2bfd-4934-8817-9b78a7c9fec6</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Ketu Primary Health Centre</FacilityName>
+                <FacilityID>DpZOtdkfW60</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>2020-06-15</PatientDateOfBirth>
+            <PatientSexCode>M</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>87fbd380-4ca6-46f1-8eef-193bb4f8d402</VisitID>
+                <VisitDate>2026-05-11</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1c</Code>
+                    <CodeDescTxt>ABC-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>90</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-05-11</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2024-05-13</DateRegimenStarted>
+                <MultiMonthDispensing>MMD3</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

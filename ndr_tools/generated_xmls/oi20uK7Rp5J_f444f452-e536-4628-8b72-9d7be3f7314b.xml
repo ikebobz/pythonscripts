@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>877</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Coker Aguda Primary Health Centre</FacilityName>
+            <FacilityID>oi20uK7Rp5J</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>oi20uK7Rp5J_f444f452-e536-4628-8b72-9d7be3f7314b</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Coker Aguda Primary Health Centre</FacilityName>
+                <FacilityID>oi20uK7Rp5J</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>1973-08-27</PatientDateOfBirth>
+            <PatientSexCode>M</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>b18da0ca-0895-4a44-a944-a06632b50afc</VisitID>
+                <VisitDate>2025-12-11</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1a</Code>
+                    <CodeDescTxt>TDF-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>120</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2025-12-11</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2025-08-28</DateRegimenStarted>
+                <MultiMonthDispensing>MMD3</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

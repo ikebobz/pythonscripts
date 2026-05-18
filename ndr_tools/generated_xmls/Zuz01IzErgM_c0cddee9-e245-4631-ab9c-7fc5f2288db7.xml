@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>1016</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Massey Street Children's Hospital</FacilityName>
+            <FacilityID>Zuz01IzErgM</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>Zuz01IzErgM_c0cddee9-e245-4631-ab9c-7fc5f2288db7</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Massey Street Children's Hospital</FacilityName>
+                <FacilityID>Zuz01IzErgM</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>2022-07-18</PatientDateOfBirth>
+            <PatientSexCode>F</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>8bbb6303-2e55-48bd-afae-f4c2bedf20e2</VisitID>
+                <VisitDate>2026-05-04</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1c</Code>
+                    <CodeDescTxt>ABC-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>30</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-05-04</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2026-05-04</DateRegimenStarted>
+                <MultiMonthDispensing>MMD1</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

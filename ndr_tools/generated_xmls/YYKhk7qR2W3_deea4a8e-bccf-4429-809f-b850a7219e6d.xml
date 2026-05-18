@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>1041</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Nigerian Institute of Medical Research (NIMR)</FacilityName>
+            <FacilityID>YYKhk7qR2W3</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>YYKhk7qR2W3_deea4a8e-bccf-4429-809f-b850a7219e6d</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Nigerian Institute of Medical Research (NIMR)</FacilityName>
+                <FacilityID>YYKhk7qR2W3</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>1983-06-12</PatientDateOfBirth>
+            <PatientSexCode>F</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>6f93e7bf-0772-4546-abe0-64c2664fe6c7</VisitID>
+                <VisitDate>2026-03-12</VisitDate>
+                <PrescribedRegimen>
+                    <Code>2d2</Code>
+                    <CodeDescTxt>TDF-3TC-ATV/r</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>30</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-03-12</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2022-03-01</DateRegimenStarted>
+                <MultiMonthDispensing>MMD1</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

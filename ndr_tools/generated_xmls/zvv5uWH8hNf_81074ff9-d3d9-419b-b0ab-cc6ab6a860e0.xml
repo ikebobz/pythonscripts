@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Container>
+    <MessageHeader>
+        <MessageStatusCode>UPDATED</MessageStatusCode>
+        <MessageCreationDateTime>2026-05-12T18:57:17</MessageCreationDateTime>
+        <MessageSchemaVersion>1.6</MessageSchemaVersion>
+        <MessageUniqueID>880</MessageUniqueID>
+        <MessageSendingOrganization>
+            <FacilityName>Harvey Road General Hospital</FacilityName>
+            <FacilityID>zvv5uWH8hNf</FacilityID>
+            <FacilityTypeCode>FAC</FacilityTypeCode>
+        </MessageSendingOrganization>
+    </MessageHeader>
+    <IndividualReport>
+        <PatientDemographics>
+            <PatientIdentifier>zvv5uWH8hNf_81074ff9-d3d9-419b-b0ab-cc6ab6a860e0</PatientIdentifier>
+            <TreatmentFacility>
+                <FacilityName>Harvey Road General Hospital</FacilityName>
+                <FacilityID>zvv5uWH8hNf</FacilityID>
+                <FacilityTypeCode>FAC</FacilityTypeCode>
+            </TreatmentFacility>
+            <PatientDateOfBirth>2019-08-17</PatientDateOfBirth>
+            <PatientSexCode>M</PatientSexCode>
+            <StateOfNigeriaOriginCode>25</StateOfNigeriaOriginCode>
+        </PatientDemographics>
+        <Condition>
+            <ConditionCode>86406008</ConditionCode>
+            <ProgramArea>
+                <ProgramAreaCode>HIV</ProgramAreaCode>
+            </ProgramArea>
+            <Regimen>
+                <VisitID>870b5bcb-2d74-4eae-88cd-16ab1e56d8b9</VisitID>
+                <VisitDate>2026-04-30</VisitDate>
+                <PrescribedRegimen>
+                    <Code>1c</Code>
+                    <CodeDescTxt>ABC-3TC-DTG</CodeDescTxt>
+                </PrescribedRegimen>
+                <PrescribedRegimenTypeCode>ART</PrescribedRegimenTypeCode>
+                <PrescribedRegimenDuration>30</PrescribedRegimenDuration>
+                <PrescribedRegimenDispensedDate>2026-04-30</PrescribedRegimenDispensedDate>
+                <DateRegimenStarted>2026-04-30</DateRegimenStarted>
+                <MultiMonthDispensing>MMD1</MultiMonthDispensing>
+            </Regimen>
+        </Condition>
+    </IndividualReport>
+</Container>

@@ -46,22 +46,81 @@ def step_1_generate_regimen_counts(radet_path):
 
 # --- STEP 2: ACTIVE CLIENT ANALYSIS (Source 3) ---
 def step_2_active_client_analysis(linelist_path, radet_path):
-    print("\n[2/3] Analyzing active client discrepancies...")
+    print("\n[2/3] Analyzing active (RADET) vs Inactive (CSV) discrepancies...")
+    
+    # 1. Read files and ensure IDs are strings to avoid data type mismatches
     df_csv = _read_csv_safely(linelist_path)
     df_xlsx = pd.read_excel(radet_path)
     
-    active_csv_ids = set(df_csv[df_csv['Current Status (28 Days)'] == 'Active']['Patient Identifier'])
+    # Clean ID columns and Status columns (handling whitespace/case)
+    df_csv['Patient Identifier'] = df_csv['Patient Identifier'].astype(str).str.strip()
+    df_csv['Current Status (28 Days)'] = df_csv['Current Status (28 Days)'].str.strip()
     
+    df_xlsx['NDR Patient Identifier'] = df_xlsx['NDR Patient Identifier'].astype(str).str.strip()
+    df_xlsx['Current ART Status'] = df_xlsx['Current ART Status'].str.strip()
+
+    # 2. Identify "Inactive" patients in the CSV Linelist
+    # You can expand this list if "Inactive" has multiple variations (e.g., 'IIT', 'Dead')
+    active_csv_df = df_csv[df_csv['Current Status (28 Days)'] == 'Active'].copy()
+    inactive_csv_ids = set(df_csv[df_csv['Current Status (28 Days)'] == 'Inactive']['Patient Identifier'])
+    
+    # 3. Identify "Active" patients in the RADET
     active_xlsx_mask = df_xlsx['Current ART Status'].isin(['Active', 'Active Restart'])
     df_xlsx_active = df_xlsx[active_xlsx_mask].copy()
     
-    discrepancy_df = df_xlsx_active[~df_xlsx_active['NDR Patient Identifier'].isin(active_csv_ids)]
-    final_list = discrepancy_df[['Facility Name', 'Patient ID']].sort_values(by='Facility Name')
+    # 4. CROSS-CHECK: Is the RADET Active ID found in the CSV Inactive Set?
+    discrepancy_df = df_xlsx_active[df_xlsx_active['NDR Patient Identifier'].isin(inactive_csv_ids)]
+    
+    # 5. Export results
+    final_list = discrepancy_df[['Facility Name', 'Patient ID', 'NDR Patient Identifier']].sort_values(by='Facility Name')
     
     output_file = "active_in_radet_not_in_linelist.xlsx"
     final_list.to_excel(output_file, index=False)
-    print(f"Success: {output_file} generated.")
-    return output_file
+    print(f"Success: {output_file} generated. Found {len(final_list)} discrepancies.")
+    
+    
+    file1_counts = (
+        active_csv_df.groupby('DATIM Code', dropna=False)['Patient Identifier']
+        .nunique()
+        .reset_index(name='Number of actives in file1')
+        .rename(columns={'DATIM Code': 'DatimId'})
+    )
+
+    file2_counts = (
+        df_xlsx_active.groupby(['DatimId', 'Facility Name'], dropna=False)['NDR Patient Identifier']
+        .nunique()
+        .reset_index(name='Number of actives in file 2')
+    )
+
+    facility_summary = pd.merge(
+        file1_counts,
+        file2_counts,
+        on='DatimId',
+        how='outer'
+    ).fillna(0)
+
+    facility_summary['Number of actives in file1'] = facility_summary['Number of actives in file1'].astype(int)
+    facility_summary['Number of actives in file 2'] = facility_summary['Number of actives in file 2'].astype(int)
+    facility_summary['Difference (file2 - file1)'] = (
+        facility_summary['Number of actives in file 2'] - facility_summary['Number of actives in file1']
+    )
+
+    # Rename columns
+    facility_summary = facility_summary.rename(columns={
+        'Number of actives in file1': 'Active On NDR',
+        'Number of actives in file 2': 'Active on RADET',
+        'Difference (file2 - file1)': 'Variance'
+    })
+
+    # Reorder and sort
+    facility_summary = facility_summary[['DatimId', 'Facility Name', 'Active On NDR', 'Active on RADET', 'Variance']]
+    facility_summary = facility_summary.sort_values(by='Facility Name')
+
+    # 9. Export facility summary to second Excel file
+    summary_output_file = "facility_active_comparison.xlsx"
+    facility_summary.to_excel(summary_output_file, index=False)
+    print(f"Facility summary saved to: {summary_output_file}")
+    
 
 # --- STEP 3: GET ADJUSTED CONCURRENCE (Source 1) ---
 def step_3_get_adjusted_concurrence(active_comparison_path, regimen_counts_path):
@@ -97,7 +156,7 @@ def step_3_get_adjusted_concurrence(active_comparison_path, regimen_counts_path)
 if __name__ == "__main__":
     # Define your source file paths here
     RADET_FILE = r'C:\Users\Admin\Downloads\projects\python\pythonscripts\Radet_all.xlsx'
-    LINELIST_FILE = 'lagos_line_list.csv'
+    LINELIST_FILE = r'C:\Users\Admin\Downloads\projects\python\pythonscripts\lagos_line_list.csv'
     FACILITY_COMPARISON_FILE = 'facility_active_comparison.xlsx' # Input required for Step 3
 
     try:

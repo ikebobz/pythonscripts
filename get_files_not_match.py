@@ -10,7 +10,7 @@ import os
 import re
 
 def main():
-    DIR = r'C:\Users\Admin\Downloads\projects\python\pythonscripts\ndr_tools\generated_xmls\not-seen'
+    DIR = r'C:\Users\Admin\Downloads\xml\treatmentxml_nimr'
 
     path = os.path.join(DIR, "*")
     files = glob.glob(path)

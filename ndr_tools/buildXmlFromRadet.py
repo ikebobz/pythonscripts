@@ -35,7 +35,7 @@ def generate_ndr_xmls_final(source_file, output_folder='generated_xmls'):
         util_df['code_description'] = util_df['code_description'].str.strip()
         state_dict = util_df[util_df['code_set_nm'] == 'STATES'].set_index('code_description')['code'].to_dict()
 
-        reg_df = pd.read_csv('regimen_map.csv')
+        reg_df = pd.read_csv('regimen_map_revised.csv')
         reg_df['description'] = reg_df['description'].str.strip()
         regimen_code_dict = reg_df.set_index('description')['code'].to_dict()
         regimen_desc_dict = reg_df.set_index('description')['code_description'].to_dict()
