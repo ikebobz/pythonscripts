@@ -1,20 +1,18 @@
-import os
 import json
 import argparse
 from pathlib import Path
 import psycopg2
-from psycopg2.extras import execute_values
 
 def quote_ident(name):
     return '"' + name.replace('"', '""') + '"'
 
 def upsert_row(conn, schema_name, table_name, pk_cols, row_data):
-    all_cols = list(row_data.keys())
-    insert_cols = ", ".join(quote_ident(c) for c in all_cols)
-    placeholders = ", ".join(["%s"] * len(all_cols))
+    cols = list(row_data.keys())
+    insert_cols = ", ".join(quote_ident(c) for c in cols)
+    placeholders = ", ".join(["%s"] * len(cols))
     conflict_target = ", ".join(quote_ident(c) for c in pk_cols)
+    update_cols = [c for c in cols if c not in pk_cols]
 
-    update_cols = [c for c in all_cols if c not in pk_cols]
     if update_cols:
         set_clause = ", ".join(f"{quote_ident(c)} = EXCLUDED.{quote_ident(c)}" for c in update_cols)
         sql = f"""
@@ -33,15 +31,11 @@ def upsert_row(conn, schema_name, table_name, pk_cols, row_data):
     with conn.cursor() as cur:
         cur.execute(sql, list(row_data.values()))
 
-def apply_jsonl_file(conn, file_path):
+def apply_jsonl(conn, file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             rec = json.loads(line)
-            schema_name = rec["schema_name"]
-            table_name = rec["table_name"]
-            pk_cols = list(rec["pk"].keys())
-            row_data = rec["row_data"]
-            upsert_row(conn, schema_name, table_name, pk_cols, row_data)
+            upsert_row(conn, rec["schema_name"], rec["table_name"], list(rec["pk"].keys()), rec["row_data"])
 
 def main():
     parser = argparse.ArgumentParser()
@@ -63,9 +57,8 @@ def main():
     conn.autocommit = False
 
     try:
-        files = sorted(Path(args.input_dir).rglob("*.jsonl"))
-        for file_path in files:
-            apply_jsonl_file(conn, str(file_path))
+        for file_path in sorted(Path(args.input_dir).rglob("*.jsonl")):
+            apply_jsonl(conn, str(file_path))
         conn.commit()
     except Exception:
         conn.rollback()

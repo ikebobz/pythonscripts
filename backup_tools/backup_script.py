@@ -1,50 +1,24 @@
 import os
 import json
 import argparse
+from pathlib import Path
 from datetime import datetime, timezone
 import pandas as pd
 import psycopg2
 from psycopg2.extras import RealDictCursor
-import json
-from pathlib import Path
-
-
-def load_last_run(manifest_path, default_value=None):
-    p = Path(manifest_path)
-    if not p.exists():
-        if default_value is None:
-            raise ValueError("manifest.json not found and no default last_run provided")
-        return datetime.fromisoformat(default_value.replace("Z", "+00:00"))
-
-    with p.open("r", encoding="utf-8") as f:
-        manifest = json.load(f)
-
-    last_run = manifest.get("last_run")
-    if not last_run:
-        if default_value is None:
-            raise ValueError("manifest.json does not contain last_run")
-        return datetime.fromisoformat(default_value.replace("Z", "+00:00"))
-
-    return datetime.fromisoformat(last_run.replace("Z", "+00:00"))
-    
-def save_manifest(manifest_path, manifest):
-    manifest["generated_at"] = datetime.now(timezone.utc).isoformat()
-    with open(manifest_path, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, default=str)
-        
-
-
-# ... perform backup ...
-
-
-
 
 WATERMARK_COLUMNS = ["date_modified", "last_modified_date"]
 
-def norm(s):
-    return str(s).strip().lower()
+def norm(v):
+    return str(v).strip().lower()
 
-def load_table_metadata(csv_path):
+def iso_now():
+    return datetime.now(timezone.utc).isoformat()
+
+def parse_iso(ts):
+    return datetime.fromisoformat(ts.replace("Z", "+00:00"))
+
+def load_csv_metadata(csv_path):
     df = pd.read_csv(csv_path)
     df.columns = [c.strip().lower() for c in df.columns]
 
@@ -53,16 +27,32 @@ def load_table_metadata(csv_path):
     if missing:
         raise ValueError(f"Missing columns in CSV: {sorted(missing)}")
 
-    grouped = {}
+    tables = {}
     for (schema_name, table_name), g in df.groupby(["schema_name", "table_name"]):
-        cols = [norm(x) for x in g["column_name"].tolist()]
-        wm = next((c for c in WATERMARK_COLUMNS if c in cols), None)
+        colset = {norm(x) for x in g["column_name"].tolist()}
+        wm = next((c for c in WATERMARK_COLUMNS if c in colset), None)
         if wm:
-            grouped[(schema_name, table_name)] = {
-                "columns": g["column_name"].tolist(),
-                "watermark_column": wm,
+            tables[(schema_name, table_name)] = {
+                "watermark_column": wm
             }
-    return grouped
+    return tables
+
+def load_manifest(manifest_path, fallback_last_run=None):
+    p = Path(manifest_path)
+    if not p.exists():
+        if not fallback_last_run:
+            raise ValueError("manifest.json not found and --last-run not provided")
+        return {
+            "generated_at": iso_now(),
+            "last_run": fallback_last_run,
+            "tables": []
+        }
+    with p.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_manifest(manifest_path, manifest):
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, default=str)
 
 def get_primary_key(conn, schema_name, table_name):
     sql = """
@@ -82,10 +72,9 @@ def get_primary_key(conn, schema_name, table_name):
     """
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
         cur.execute(sql, (schema_name, table_name))
-        rows = cur.fetchall()
-    return [r["pk_column"] for r in rows]
+        return [r["pk_column"] for r in cur.fetchall()]
 
-def fetch_changes(conn, schema_name, table_name, watermark_column, last_run):
+def fetch_changes(conn, schema_name, table_name, watermark_column, last_run_dt):
     sql = f"""
     SELECT *
     FROM "{schema_name}"."{table_name}"
@@ -93,7 +82,7 @@ def fetch_changes(conn, schema_name, table_name, watermark_column, last_run):
     ORDER BY "{watermark_column}" ASC
     """
     with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute(sql, (last_run,))
+        cur.execute(sql, (last_run_dt,))
         return cur.fetchall()
 
 def ensure_dir(path):
@@ -103,7 +92,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--csv", required=True)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--last-run", required=True, help="ISO timestamp, e.g. 2026-06-18T00:00:00Z")
+    parser.add_argument("--last-run", default=None)
     parser.add_argument("--host", required=True)
     parser.add_argument("--port", default=5432, type=int)
     parser.add_argument("--dbname", required=True)
@@ -111,15 +100,17 @@ def main():
     parser.add_argument("--password", required=True)
     args = parser.parse_args()
 
-    #last_run = datetime.fromisoformat(args.last_run.replace("Z", "+00:00"))
-    manifest_path = os.path.join(args.output, "manifest.json")
-    last_run = load_last_run(manifest_path, default_value=args.last_run)
+    output_dir = Path(args.output)
+    manifest_path = output_dir / "manifest.json"
 
-    manifest = {
-    "generated_at": datetime.now(timezone.utc).isoformat(),
-    "last_run": last_run.isoformat(),
-    "tables": []
-               }
+    manifest = load_manifest(manifest_path, fallback_last_run=args.last_run)
+    last_run_dt = parse_iso(manifest["last_run"])
+
+    run_date = datetime.now(timezone.utc).date().isoformat()
+    run_dir = output_dir / run_date
+    ensure_dir(run_dir)
+
+    tables = load_csv_metadata(args.csv)
 
     conn = psycopg2.connect(
         host=args.host,
@@ -129,29 +120,21 @@ def main():
         password=args.password,
     )
 
-    ensure_dir(args.output)
-    tables = load_table_metadata(args.csv)
-
-    manifest = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "last_run": last_run.isoformat(),
-        "tables": [],
-    }
-
+    new_tables = []
     try:
         for (schema_name, table_name), meta in tables.items():
             pk_cols = get_primary_key(conn, schema_name, table_name)
             if not pk_cols:
                 continue
 
-            rows = fetch_changes(conn, schema_name, table_name, meta["watermark_column"], last_run)
+            rows = fetch_changes(conn, schema_name, table_name, meta["watermark_column"], last_run_dt)
             if not rows:
                 continue
 
-            table_dir = os.path.join(args.output, schema_name, table_name)
+            table_dir = run_dir / schema_name
             ensure_dir(table_dir)
 
-            out_file = os.path.join(table_dir, f"{datetime.now(timezone.utc).date().isoformat()}.jsonl")
+            out_file = table_dir / f"{table_name}.jsonl"
             with open(out_file, "w", encoding="utf-8") as f:
                 for row in rows:
                     pk = {k: row[k] for k in pk_cols}
@@ -166,22 +149,22 @@ def main():
                     }
                     f.write(json.dumps(payload, default=str) + "\n")
 
-            manifest["tables"].append({
+            new_tables.append({
                 "schema_name": schema_name,
                 "table_name": table_name,
                 "watermark_column": meta["watermark_column"],
                 "primary_key": pk_cols,
-                "output_file": out_file,
+                "output_file": str(out_file),
                 "row_count": len(rows),
             })
 
-        with open(os.path.join(args.output, "manifest.json"), "w", encoding="utf-8") as f:
-            json.dump(manifest, f, indent=2, default=str)
+        manifest["generated_at"] = iso_now()
+        manifest["last_run"] = iso_now()
+        manifest["tables"] = new_tables
+        save_manifest(manifest_path, manifest)
 
     finally:
         conn.close()
-    manifest["last_run"] = datetime.now(timezone.utc).isoformat()
-    save_manifest(manifest_path, manifest)
 
 if __name__ == "__main__":
     main()
