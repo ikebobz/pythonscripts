@@ -1,0 +1,296 @@
+{
+  "generated_at": "2026-06-19T21:00:04.379966+00:00",
+  "last_run": "2026-06-19T21:00:04.379966+00:00",
+  "tables": [
+    {
+      "schema_name": "public",
+      "table_name": "biometric",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\biometric\\2026-06-19.jsonl",
+      "row_count": 388
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_art_clinical",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_art_clinical\\2026-06-19.jsonl",
+      "row_count": 137
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_art_pharmacy",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_art_pharmacy\\2026-06-19.jsonl",
+      "row_count": 110
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_eac",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_eac\\2026-06-19.jsonl",
+      "row_count": 23
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_eac_out_come",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_eac_out_come\\2026-06-19.jsonl",
+      "row_count": 4
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_eac_session",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_eac_session\\2026-06-19.jsonl",
+      "row_count": 21
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_enrollment",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_enrollment\\2026-06-19.jsonl",
+      "row_count": 25
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_observation",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_observation\\2026-06-19.jsonl",
+      "row_count": 131
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_patient_tracker",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_patient_tracker\\2026-06-19.jsonl",
+      "row_count": 1
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hiv_status_tracker",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hiv_status_tracker\\2026-06-19.jsonl",
+      "row_count": 121
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hts_client",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hts_client\\2026-06-19.jsonl",
+      "row_count": 144
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hts_pns_index_client_partner",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hts_pns_index_client_partner\\2026-06-19.jsonl",
+      "row_count": 8
+    },
+    {
+      "schema_name": "public",
+      "table_name": "hts_risk_stratification",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\hts_risk_stratification\\2026-06-19.jsonl",
+      "row_count": 153
+    },
+    {
+      "schema_name": "public",
+      "table_name": "laboratory_order",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\laboratory_order\\2026-06-19.jsonl",
+      "row_count": 49
+    },
+    {
+      "schema_name": "public",
+      "table_name": "laboratory_result",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\laboratory_result\\2026-06-19.jsonl",
+      "row_count": 9
+    },
+    {
+      "schema_name": "public",
+      "table_name": "laboratory_sample",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\laboratory_sample\\2026-06-19.jsonl",
+      "row_count": 51
+    },
+    {
+      "schema_name": "public",
+      "table_name": "laboratory_test",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\laboratory_test\\2026-06-19.jsonl",
+      "row_count": 49
+    },
+    {
+      "schema_name": "public",
+      "table_name": "patient_encounter",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\patient_encounter\\2026-06-19.jsonl",
+      "row_count": 37
+    },
+    {
+      "schema_name": "public",
+      "table_name": "patient_person",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\patient_person\\2026-06-19.jsonl",
+      "row_count": 254
+    },
+    {
+      "schema_name": "public",
+      "table_name": "patient_visit",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\patient_visit\\2026-06-19.jsonl",
+      "row_count": 128
+    },
+    {
+      "schema_name": "public",
+      "table_name": "pmtct_anc",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\pmtct_anc\\2026-06-19.jsonl",
+      "row_count": 7
+    },
+    {
+      "schema_name": "public",
+      "table_name": "pmtct_hts",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\pmtct_hts\\2026-06-19.jsonl",
+      "row_count": 65
+    },
+    {
+      "schema_name": "public",
+      "table_name": "pmtct_infant_mother_art",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\pmtct_infant_mother_art\\2026-06-19.jsonl",
+      "row_count": 2
+    },
+    {
+      "schema_name": "public",
+      "table_name": "pmtct_infant_rapid_antibody",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\pmtct_infant_rapid_antibody\\2026-06-19.jsonl",
+      "row_count": 2
+    },
+    {
+      "schema_name": "public",
+      "table_name": "pmtct_pregnancy_cycle",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\pmtct_pregnancy_cycle\\2026-06-19.jsonl",
+      "row_count": 72
+    },
+    {
+      "schema_name": "public",
+      "table_name": "prep_clinic",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\prep_clinic\\2026-06-19.jsonl",
+      "row_count": 2
+    },
+    {
+      "schema_name": "public",
+      "table_name": "prep_eligibility",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\prep_eligibility\\2026-06-19.jsonl",
+      "row_count": 2
+    },
+    {
+      "schema_name": "public",
+      "table_name": "prep_enrollment",
+      "watermark_column": "date_modified",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\prep_enrollment\\2026-06-19.jsonl",
+      "row_count": 2
+    },
+    {
+      "schema_name": "public",
+      "table_name": "triage_vital_sign",
+      "watermark_column": "last_modified_date",
+      "primary_key": [
+        "id"
+      ],
+      "output_file": "backups\\public\\triage_vital_sign\\2026-06-19.jsonl",
+      "row_count": 104
+    }
+  ]
+}
