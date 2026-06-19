@@ -1,6 +1,7 @@
 import os
 import json
 import argparse
+import shutil
 from pathlib import Path
 from datetime import datetime, timezone
 import pandas as pd
@@ -32,9 +33,7 @@ def load_csv_metadata(csv_path):
         colset = {norm(x) for x in g["column_name"].tolist()}
         wm = next((c for c in WATERMARK_COLUMNS if c in colset), None)
         if wm:
-            tables[(schema_name, table_name)] = {
-                "watermark_column": wm
-            }
+            tables[(schema_name, table_name)] = {"watermark_column": wm}
     return tables
 
 def load_manifest(manifest_path, fallback_last_run=None):
@@ -45,7 +44,7 @@ def load_manifest(manifest_path, fallback_last_run=None):
         return {
             "generated_at": iso_now(),
             "last_run": fallback_last_run,
-            "tables": []
+            "archives": []
         }
     with p.open("r", encoding="utf-8") as f:
         return json.load(f)
@@ -88,6 +87,11 @@ def fetch_changes(conn, schema_name, table_name, watermark_column, last_run_dt):
 def ensure_dir(path):
     os.makedirs(path, exist_ok=True)
 
+def zip_folder(folder_path):
+    folder_path = Path(folder_path)
+    zip_base = str(folder_path)
+    return shutil.make_archive(zip_base, "zip", root_dir=folder_path.parent, base_dir=folder_path.name)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--csv", required=True)
@@ -101,8 +105,9 @@ def main():
     args = parser.parse_args()
 
     output_dir = Path(args.output)
-    manifest_path = output_dir / "manifest.json"
+    ensure_dir(output_dir)
 
+    manifest_path = output_dir / "manifest.json"
     manifest = load_manifest(manifest_path, fallback_last_run=args.last_run)
     last_run_dt = parse_iso(manifest["last_run"])
 
@@ -120,7 +125,7 @@ def main():
         password=args.password,
     )
 
-    new_tables = []
+    archive_entries = []
     try:
         for (schema_name, table_name), meta in tables.items():
             pk_cols = get_primary_key(conn, schema_name, table_name)
@@ -131,10 +136,10 @@ def main():
             if not rows:
                 continue
 
-            table_dir = run_dir / schema_name
-            ensure_dir(table_dir)
+            schema_dir = run_dir / schema_name
+            ensure_dir(schema_dir)
 
-            out_file = table_dir / f"{table_name}.jsonl"
+            out_file = schema_dir / f"{table_name}.jsonl"
             with open(out_file, "w", encoding="utf-8") as f:
                 for row in rows:
                     pk = {k: row[k] for k in pk_cols}
@@ -149,7 +154,7 @@ def main():
                     }
                     f.write(json.dumps(payload, default=str) + "\n")
 
-            new_tables.append({
+            archive_entries.append({
                 "schema_name": schema_name,
                 "table_name": table_name,
                 "watermark_column": meta["watermark_column"],
@@ -158,9 +163,17 @@ def main():
                 "row_count": len(rows),
             })
 
+        zip_path = zip_folder(run_dir)
+
+        shutil.rmtree(run_dir)
+
         manifest["generated_at"] = iso_now()
         manifest["last_run"] = iso_now()
-        manifest["tables"] = new_tables
+        manifest.setdefault("archives", []).append({
+            "run_date": run_date,
+            "zip_file": str(zip_path),
+            "tables": archive_entries
+        })
         save_manifest(manifest_path, manifest)
 
     finally:
