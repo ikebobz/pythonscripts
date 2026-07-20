@@ -85,6 +85,8 @@ def generate_ndr_xmls_final(source_file, output_folder='generated_xmls'):
                     mmd_type = "MMD2"
                 if m_val == 4:
                     mmd_type = "MMD3"
+                if m_val == 5:
+                    mmd_type = "MMD3"
             except:
                 duration, mmd_type = 0, ""
 

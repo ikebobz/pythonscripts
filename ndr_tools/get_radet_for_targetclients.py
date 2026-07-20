@@ -78,7 +78,7 @@ def extract_specific_columns(input_file, subset_file, output_file, source_sheet=
 # --- CONFIGURATION ---
 INPUT_FILENAME = "Radet_all.xlsx" 
 SUBSET_FILENAME = "target_clients.xlsx"  # <-- Change this to your client list file name
-OUTPUT_FILENAME = "Filtered_Patient_Data.xlsx"
+OUTPUT_FILENAME = "test_data.xlsx"
 
 if __name__ == "__main__":
     extract_specific_columns(
