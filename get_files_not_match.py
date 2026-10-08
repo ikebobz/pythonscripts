@@ -10,14 +10,14 @@ import os
 import re
 
 def main():
-    DIR = r'C:\Users\Admin\Downloads\xml\treatmentxml_nimr'
+    DIR = r'C:\Users\Admin\Downloads\xml\extraction_uploads\badagry'
 
     path = os.path.join(DIR, "*")
     files = glob.glob(path)
     hits = 0
     with open('datum.csv','a+') as file:
       for f in files:
-         fh = open(f,'r')
+         fh = open(f,'r',encoding='utf-8', errors='ignore')
          fc = fh.read()
          refill = findTXCurData(fc)
          visit = findTXCurData(fc,flag=2)
