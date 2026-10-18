@@ -1,0 +1,232 @@
+{
+  "generated_at": "2026-10-17T09:34:44.601143+00:00",
+  "last_run": "2026-10-17T09:34:41.705043+00:00",
+  "archives": [
+    {
+      "run_date": "2026-10-17",
+      "zip_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441.zip",
+      "tables": [
+        {
+          "schema_name": "public",
+          "table_name": "biometric",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\biometric.jsonl",
+          "row_count": 449
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_adherence_preparation",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_adherence_preparation.jsonl",
+          "row_count": 5
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_art_clinical",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_art_clinical.jsonl",
+          "row_count": 191
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_art_pharmacy",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_art_pharmacy.jsonl",
+          "row_count": 195
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_eac",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_eac.jsonl",
+          "row_count": 31
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_eac_session",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_eac_session.jsonl",
+          "row_count": 4
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_enrollment_commencement",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_enrollment_commencement.jsonl",
+          "row_count": 6
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_initial_clinical_evaluation",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_initial_clinical_evaluation.jsonl",
+          "row_count": 5
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_observation",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_observation.jsonl",
+          "row_count": 197
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_patient_tracker",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_patient_tracker.jsonl",
+          "row_count": 4
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hiv_status_tracker",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hiv_status_tracker.jsonl",
+          "row_count": 207
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hts_encounter",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hts_encounter.jsonl",
+          "row_count": 330
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hts_ict_contact",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hts_ict_contact.jsonl",
+          "row_count": 245
+        },
+        {
+          "schema_name": "public",
+          "table_name": "hts_ict_encounter",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\hts_ict_encounter.jsonl",
+          "row_count": 194
+        },
+        {
+          "schema_name": "public",
+          "table_name": "laboratory_order",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\laboratory_order.jsonl",
+          "row_count": 92
+        },
+        {
+          "schema_name": "public",
+          "table_name": "laboratory_result",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\laboratory_result.jsonl",
+          "row_count": 50
+        },
+        {
+          "schema_name": "public",
+          "table_name": "laboratory_sample",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\laboratory_sample.jsonl",
+          "row_count": 102
+        },
+        {
+          "schema_name": "public",
+          "table_name": "laboratory_test",
+          "watermark_column": "date_modified",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\laboratory_test.jsonl",
+          "row_count": 100
+        },
+        {
+          "schema_name": "public",
+          "table_name": "patient_encounter",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\patient_encounter.jsonl",
+          "row_count": 56
+        },
+        {
+          "schema_name": "public",
+          "table_name": "patient_person",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\patient_person.jsonl",
+          "row_count": 179
+        },
+        {
+          "schema_name": "public",
+          "table_name": "patient_visit",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\patient_visit.jsonl",
+          "row_count": 236
+        },
+        {
+          "schema_name": "public",
+          "table_name": "triage_vital_sign",
+          "watermark_column": "last_modified_date",
+          "primary_key": [
+            "id"
+          ],
+          "output_file": "C:\\Users\\Admin\\Downloads\\projects\\python\\pythonscripts\\backup_tools\\facility_backup_package\\backups\\2026-10-17_093441\\public\\triage_vital_sign.jsonl",
+          "row_count": 192
+        }
+      ]
+    }
+  ]
+}

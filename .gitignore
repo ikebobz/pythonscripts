@@ -3,3 +3,6 @@
 *.csv
 build/
 dist/
+*.zip
+logs/
+*.zip

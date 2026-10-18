@@ -1,0 +1,44 @@
+{
+  "channel": "stable",
+  "core": {
+    "version": "3.1.0",
+    "url": "lamisplus-3.1.0.jar",
+    "urgent": false,
+    "notes": "Core security fixes"
+  },
+  "files": [
+    {
+      "name": "query.yml",
+      "url": "query.yml",
+      "notes": "Updated reporting queries"
+    }
+  ],
+  "db_updates": [
+    {
+      "version": "1",
+      "url": "db_updates-1.sql",
+      "notes": "Backfill facility codes"
+    },
+    {
+      "version": "2",
+      "url": "db_updates-2.sql",
+      "notes": "Index on patient visits"
+    }
+  ],
+  "modules": [
+    {
+      "name": "HtsModule",
+      "version": "2.6.2",
+      "url": "hts-2.6.2.jar",
+      "order": 20,
+      "notes": "Fixes slow patient data load"
+    },
+    {
+      "name": "NDRModule",
+      "version": "2.5.4",
+      "url": "ndr-2.5.4.jar",
+      "order": 30,
+      "notes": "Optimizes XML extraction"
+    }
+  ]
+}

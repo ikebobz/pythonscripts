@@ -1,0 +1,783 @@
+[
+    {
+        "id": 258,
+        "name": "PatientModule",
+        "basePackage": "org.lamisplus.modules.patient",
+        "description": "patient",
+        "version": "2.2.2",
+        "buildTime": "2026-09-15T08:37:44+01:00",
+        "active": true,
+        "artifact": "patientmodule\\patient-2.2.2.jar",
+        "umdLocation": "/across/resources/static/patient/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/Patient-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 408,
+                "name": "edit_patient",
+                "description": "edit patient",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 401,
+                "name": "create_patient",
+                "description": "create patient",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 406,
+                "name": "capture_patient_biometrics",
+                "description": "capture patient biometrics",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 407,
+                "name": "view_patient_appointment",
+                "description": "view patient appointment",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 404,
+                "name": "patient_check_in",
+                "description": "patient check in",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 402,
+                "name": "view_patient",
+                "description": "view patient",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 405,
+                "name": "create_patient_appointment",
+                "description": "create patient appointment",
+                "moduleName": "PatientModule"
+            },
+            {
+                "id": 403,
+                "name": "delete_patient",
+                "description": "delete patient",
+                "moduleName": "PatientModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 259,
+        "name": "TriageModule",
+        "basePackage": "org.lamisplus.modules.triage",
+        "description": "triage",
+        "version": "2.0.6",
+        "buildTime": "2024-07-10T09:24:36+01:00",
+        "active": true,
+        "artifact": "triagemodule\\triage-2.0.6.jar",
+        "umdLocation": "/across/resources/static/triage/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/Triage-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 260,
+        "name": "LaboratoryModule",
+        "basePackage": "org.lamisplus.modules.Laboratory",
+        "description": "laboratory",
+        "version": "2.2.0",
+        "buildTime": "2026-06-15T14:09:25+01:00",
+        "active": true,
+        "artifact": "laboratorymodule\\laboratory-2.2.0.jar",
+        "umdLocation": "/across/resources/static/laboratory/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/Laboratory-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 417,
+                "name": "create_sample_verification",
+                "description": "create sample verification",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 422,
+                "name": "edit_test_results",
+                "description": "edit test results",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 411,
+                "name": "view_lab_order",
+                "description": "view lab order",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 423,
+                "name": "view_test_results",
+                "description": "view test results",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 415,
+                "name": "view_sample_collection",
+                "description": "view sample collection",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 420,
+                "name": "delete_sample_verification",
+                "description": "delete sample verification",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 410,
+                "name": "edit_lab_order",
+                "description": "edit lab order",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 421,
+                "name": "create_test_results",
+                "description": "create test results",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 413,
+                "name": "create_sample_collection",
+                "description": "create sample collection",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 409,
+                "name": "create_lab_order",
+                "description": "create lab order",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 412,
+                "name": "delete_lab_order",
+                "description": "delete lab order",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 419,
+                "name": "view_sample_verification",
+                "description": "view sample verification",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 414,
+                "name": "edit_sample_collection",
+                "description": "edit sample collection",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 416,
+                "name": "delete_sample_collection",
+                "description": "delete sample collection",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 424,
+                "name": "delete_test_results",
+                "description": "delete test results",
+                "moduleName": "LaboratoryModule"
+            },
+            {
+                "id": 418,
+                "name": "edit_sample_verification",
+                "description": "edit sample verification",
+                "moduleName": "LaboratoryModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 262,
+        "name": "HivModule",
+        "basePackage": "org.lamisplus.modules.hiv",
+        "description": "hiv",
+        "version": "2.7.2",
+        "buildTime": "2026-09-14T19:38:33+01:00",
+        "active": true,
+        "artifact": "hivmodule\\hiv-2.7.2.jar",
+        "umdLocation": "/across/resources/static/hiv/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/HIV-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 442,
+                "name": "cervical_cancer_consent_form",
+                "description": "Cervical Cancer Consent Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 439,
+                "name": "eac_monitoring_register",
+                "description": "EAC Monitoring Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 444,
+                "name": "cervical_cancer_care_register",
+                "description": "Cervical Cancer Care Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 438,
+                "name": "enhanced_adherence_counselling_form",
+                "description": "Enhanced Adherence Counselling Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 436,
+                "name": "art_register",
+                "description": "ART Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 429,
+                "name": "pediatric_initial_clinical_evaluation_form",
+                "description": "Pediatric Initial Clinical Evaluation Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 434,
+                "name": "client_tracking_and_discontinuation_form",
+                "description": "Client Tracking & Discontinuation Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 437,
+                "name": "viral_load_monitoring_register",
+                "description": "Viral Load Monitoring Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 430,
+                "name": "care_card",
+                "description": "Care Card",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 441,
+                "name": "cervical_cancer_screening_form",
+                "description": "Cervical Cancer Screening Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 443,
+                "name": "cervical_cancer_care_card",
+                "description": "Cervical Cancer Care Card",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 446,
+                "name": "prep_care_card",
+                "description": "PrEP Care Card",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 440,
+                "name": "hiv_patient_tracking_register",
+                "description": "HIV Patient Tracking Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 433,
+                "name": "hiv_care_and_treatment_transfer_form",
+                "description": "HIV Care And Treatment Transfer Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 448,
+                "name": "care_and_support_checklist",
+                "description": "Care And Support Checklist",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 431,
+                "name": "laboratory_order_and_results_form",
+                "description": "Laboratory Order And Results Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 449,
+                "name": "care_and_support_register",
+                "description": "Care And Support Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 447,
+                "name": "prep_register",
+                "description": "PrEP Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 432,
+                "name": "viral_load_order_and_result_form",
+                "description": "Viral Load Order And Result Form",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 435,
+                "name": "hiv_enrollment_register",
+                "description": "HIV Enrollment Register",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 445,
+                "name": "prep_eligibility_forms",
+                "description": "PrEP Eligibility Forms",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 428,
+                "name": "adult_initial_clinical_evaluation",
+                "description": "Adult Initial Clinical Evaluation",
+                "moduleName": "HivModule"
+            },
+            {
+                "id": 450,
+                "name": "combined_pharmacy_order_form",
+                "description": "Combined Pharmacy Order Form",
+                "moduleName": "HivModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 263,
+        "name": "DQRModule",
+        "basePackage": "org.lamisplus.modules.dqr",
+        "description": "DQR_module",
+        "version": "2.0.1",
+        "buildTime": "2026-02-16T10:04:14+01:00",
+        "active": true,
+        "artifact": "dqrmodule\\DQR-2.0.1.jar",
+        "umdLocation": "/across/resources/static/dqr/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": null,
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 498,
+                "name": "create_dqr",
+                "description": "create dqr",
+                "moduleName": "DQRModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 264,
+        "name": "CaseManagerModule",
+        "basePackage": "org.lamisplus.modules.casemanager",
+        "description": "casemanager",
+        "version": "2.2.1",
+        "buildTime": "2026-09-15T08:54:18+01:00",
+        "active": true,
+        "artifact": "casemanagermodule\\casemanager-2.2.1.jar",
+        "umdLocation": "/across/resources/static/casemanager/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": null,
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 277,
+        "name": "NDRModule",
+        "basePackage": "org.lamisplus.modules.ndr",
+        "description": "NDRModule",
+        "version": "2.5.0",
+        "buildTime": "2026-07-14T15:38:09+01:00",
+        "active": true,
+        "artifact": "ndrmodule\\ndr-module-2.5.0_optimizedv4.jar.zip.jar",
+        "umdLocation": "/across/resources/static/ndr/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/NDR-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 267,
+        "name": "ClientSyncModule",
+        "basePackage": "org.lamisplus.modules.central",
+        "description": "client-sync",
+        "version": "2.2.4",
+        "buildTime": "2025-05-14T07:10:11+01:00",
+        "active": true,
+        "artifact": "clientsyncmodule\\client-sync-2.2.4.jar",
+        "umdLocation": "/across/resources/static/central/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/central-sync-client/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 269,
+        "name": "PrepModule",
+        "basePackage": "org.lamisplus.modules.prep",
+        "description": "HIV Prevention",
+        "version": "2.3.2",
+        "buildTime": "2026-09-21T10:10:43+01:00",
+        "active": true,
+        "artifact": "prepmodule\\hiv-prevention-2.3.2.jar",
+        "umdLocation": "/across/resources/static/hiv-prevention/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/Prep-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 270,
+        "name": "HtsModule",
+        "basePackage": "org.lamisplus.modules.hts",
+        "description": "Hts",
+        "version": "2.6.0",
+        "buildTime": "2026-09-18T14:18:50+01:00",
+        "active": true,
+        "artifact": "htsmodule\\hts-2.6.0.jar",
+        "umdLocation": "/across/resources/static/hts/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": null,
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 457,
+                "name": "referral_register",
+                "description": "Referral Register",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 459,
+                "name": "nigeria_pns_form",
+                "description": "Nigeria PNS Form",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 453,
+                "name": "client_intake_form",
+                "description": "Client intake form",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 451,
+                "name": "hts_view",
+                "description": "View hts",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 454,
+                "name": "daily_hiv_worksheet",
+                "description": "Daily HIV Worksheet",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 458,
+                "name": "family_index_testing_form",
+                "description": "Family Index Testing Form",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 452,
+                "name": "request_and_result_form",
+                "description": "Request and Result Form",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 456,
+                "name": "referral_form",
+                "description": "Referral Form",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 455,
+                "name": "hts_register",
+                "description": "HTS Register",
+                "moduleName": "HtsModule"
+            },
+            {
+                "id": 460,
+                "name": "index_testing_register",
+                "description": "Index Testing register",
+                "moduleName": "HtsModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 271,
+        "name": "MhpssModule",
+        "basePackage": "org.lamisplus.modules.mhpss",
+        "description": "MHPSS",
+        "version": "2.0.1",
+        "buildTime": "2024-07-11T12:14:36+01:00",
+        "active": true,
+        "artifact": "mhpssmodule\\mhpss-2.0.1.jar",
+        "umdLocation": "/across/resources/static/mhpss/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/MHPSS-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 272,
+        "name": "PMTCTModule",
+        "basePackage": "org.lamisplus.modules.pmtct",
+        "description": "pmtct",
+        "version": "2.5.2",
+        "buildTime": "2026-09-18T10:34:38+01:00",
+        "active": true,
+        "artifact": "pmtctmodule\\pmtct-2.5.2.jar",
+        "umdLocation": "/across/resources/static/pmtct/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": null,
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 488,
+                "name": "delivery_register",
+                "description": "Delivery Register",
+                "moduleName": "PMTCTModule"
+            },
+            {
+                "id": 486,
+                "name": "pmtct_hts",
+                "description": "PMTCT HTS",
+                "moduleName": "PMTCTModule"
+            },
+            {
+                "id": 485,
+                "name": "general_anc_register",
+                "description": "General ANC Register",
+                "moduleName": "PMTCTModule"
+            },
+            {
+                "id": 487,
+                "name": "maternal_cohort_register",
+                "description": "Maternal Cohort Register",
+                "moduleName": "PMTCTModule"
+            },
+            {
+                "id": 489,
+                "name": "child_follow_up_register",
+                "description": "Child Follow-up Register",
+                "moduleName": "PMTCTModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 273,
+        "name": "BiometricModule",
+        "basePackage": "org.lamisplus.modules.biometric",
+        "description": "biometric",
+        "version": "2.2.0",
+        "buildTime": "2026-09-15T16:17:03+01:00",
+        "active": true,
+        "artifact": "biometricmodule\\biometric-2.2.0 (1).jar",
+        "umdLocation": "/across/resources/static/biometric/index.html",
+        "moduleMap": null,
+        "inError": false,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": "https://api.github.com/repos/lamisplus/Biometric-Module/releases/latest",
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    },
+    {
+        "id": 265,
+        "name": "LimsModule",
+        "basePackage": "org.lamisplus.modules.lims",
+        "description": "lims",
+        "version": "2.1.1",
+        "buildTime": "2026-03-18T10:20:26+01:00",
+        "active": true,
+        "artifact": "limsmodule\\lims-2.1.1.jar",
+        "umdLocation": "/across/resources/static/lims/index.html",
+        "moduleMap": null,
+        "inError": true,
+        "installOnBoot": false,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": null,
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [
+            {
+                "id": 492,
+                "name": "view_manifest",
+                "description": "view manifest",
+                "moduleName": "LimsModule"
+            },
+            {
+                "id": 494,
+                "name": "set_configuration",
+                "description": "set configuration",
+                "moduleName": "LimsModule"
+            },
+            {
+                "id": 491,
+                "name": "create_manifest",
+                "description": "create manifest",
+                "moduleName": "LimsModule"
+            },
+            {
+                "id": 495,
+                "name": "view_result",
+                "description": "view result",
+                "moduleName": "LimsModule"
+            },
+            {
+                "id": 493,
+                "name": "print_manifest",
+                "description": "print manifest",
+                "moduleName": "LimsModule"
+            },
+            {
+                "id": 496,
+                "name": "add_result",
+                "description": "add result",
+                "moduleName": "LimsModule"
+            }
+        ],
+        "new": false
+    },
+    {
+        "id": 278,
+        "name": "ReportModule",
+        "basePackage": "org.lamisplus.modules.report",
+        "description": "report-module ReportModule [ depends on HivModule 2.1.2 which is a lower version]",
+        "version": "2.7.2",
+        "buildTime": null,
+        "active": true,
+        "artifact": "reportmodule\\report-2.7.2_upd.jar",
+        "umdLocation": "/across/resources/static/report/index.html",
+        "moduleMap": null,
+        "inError": null,
+        "installOnBoot": true,
+        "priority": 100,
+        "webModules": null,
+        "type": null,
+        "message": null,
+        "gitHubLink": null,
+        "latestVersion": null,
+        "downloadUrl": null,
+        "lastSuccessfulUpdateCheck": null,
+        "permissions": [],
+        "new": false
+    }
+]
