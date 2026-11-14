@@ -31,7 +31,7 @@ if errorlevel 1 (
     goto :task
 )
 netsh advfirewall firewall delete rule name="Facility Backup Receiver" >nul 2>&1
-netsh advfirewall firewall add rule name="Facility Backup Receiver" dir=in action=allow protocol=TCP localport=%RECEIVER_PORT% remoteip=100.64.0.0/10
+netsh advfirewall firewall add rule name="Facility Backup Receiver" dir=in action=allow protocol=TCP localport=%RECEIVER_PORT% remoteip=10.244.0.0/16
 if errorlevel 1 echo [WARNING] Adding the firewall rule failed.
 
 :task

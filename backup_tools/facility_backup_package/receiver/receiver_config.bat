@@ -13,4 +13,4 @@ set RECEIVER_PORT=8765
 
 REM Shared secret. setup_receiver.bat fills this in; copy the same value into
 REM SHIP_TOKEN in every facility's backup_config.bat.
-set RECEIVER_TOKEN=
+set RECEIVER_TOKEN=kx5eMCwpJU7-tF4WFnWffAx3irpXFWEtziADxmkI5G0
